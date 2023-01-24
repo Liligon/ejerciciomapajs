@@ -25,10 +25,9 @@
       border: 1px solid red;
     }
 
-    .card{
+    .card {
       border-radius: 30px;
     }
-
   </style>
 </head>
 
@@ -36,7 +35,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
   <div class="text-center">
     <map name="mapa" class="figuras">
-      <area shape="circle" coords="40,100,15" href="" onmouseover="mostrar(15)" onmouseout="ocultar()" />
+      <area shape="circle" coords="40,100,15" href="" id="arica"/>
       <area shape="circle" coords="90,100,15" href="" onmouseover="mostrar(1)" onmouseout="ocultar()" />
       <area shape="rectangle" coords="150,50,230,130" href="" onmouseover="mostrar(2)" onmouseout="ocultar()" />
       <area shape="rectangle" coords="270,50,390,150" href="" onmouseover="mostrar(3)" onmouseout="ocultar()" />
@@ -59,7 +58,7 @@
 
 
 
-  <div class="container text-center">
+  <div  id class="container text-center">
 
     <div class="card">
       <img id="foto" src="..." class="card-img-top shadow" alt="...">
@@ -69,21 +68,24 @@
       </div>
     </div>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
-  
+
+    
+
   <script>
+
     function mostrar(nombre) {
       const titulo = document.getElementById('region');
       const descripcion = document.getElementById('atractivos');
-      const imagen= document.getElementById ('foto');
+      const imagen = document.getElementById('foto');
+    
+
+
       titulo.innerText = nombre
       switch (nombre) {
-        case 15: titulo.innerText = "Region Arica y Parinacota";
-          descripcion.innerText = "El morro de Arica es un cerro costero, que tiene unos 130 metros de altura, emplazado al sur del espacio urbano de Arica, en la región de Arica y Parinacota, en el norte de Chile. Es el mayor referente turístico y simbólico de la ciudad. Fue declarado Monumento Nacional el 6 de octubre de 1971";
-          imagen.src = "./img/arica y parinacota.jpg"
-          break;
         case 1: titulo.innerText = "Region de Tarapaca";
           descripcion.innerText = "Cuenta con las salitreras Humberstone y Santa Laura, donde se conservan fábricas y edificios que ofrecen una mirada al patrimonio industrial y minero de la región. Al noreste, en el desierto de Atacama, está el diseño antropomórfico del Gigante de Atacama, en el Cerro Unitas. En la costa del Pacífico está Iquique, la capital regional famosa por sus playas";
           imagen.src = "./img/tarapaca.jpg"
@@ -124,7 +126,7 @@
           descripcion.innerText = "Descubre las culturas originarias que aún habitan en Biobío, como los Pehuenches, gente del pehuén en el idioma Mapuche, en un recorrido inolvidable por Alto Biobío. Adéntrate en sus costumbres y prueba su gastronomía, donde el piñón fruto del árbol de la Araucaria es uno de los ingredientes estrella";
           imagen.src = "./img/concepcion.jpg";
           break;
-          case 9: titulo.innerText = "Region de la Araucania";
+        case 9: titulo.innerText = "Region de la Araucania";
           descripcion.innerText = "La región de la Araucanía, en el centro de Chile, abarca un terreno que varía desde la costa del Pacífico en el oeste hasta los volcanes y las montañas de los Andes en el este. Las reservas de la naturaleza, como el Parque Nacional Huerquehue y el Parque Nacional Conguillío, protegen los ecosistemas con lagos, ríos y bosques de araucarias";
           imagen.src = "./img/araucania.jpg";
           break;
@@ -136,11 +138,11 @@
           descripcion.innerText = "es una región del sur de Chile conocida por sus bosques, las montañas de los Andes y los lagos. La capital regional, Puerto Montt, es un puerto ajetreado con una catedral neoclásica de madera. Entre los volcanes activos cercanos, se encuentran el Osorno, con su cono cubierto por un glaciar, y el Calbuco. Al sur, la isla de Chiloé es conocida por sus iglesias de madera y los fiordos donde se ven ballenas. La ciudad capital, Castro, tiene casas coloridas construidas sobre pilotes";
           imagen.src = "./img/los lagos.jpg";
           break;
-        case 11: titulo.innerText = "Region del Aysen";
+        case 11: titulo.innerText = "Region de Aysen";
           descripcion.innerText = "La región de Aysén es un área escasamente poblada del sur de Chile, con grandes glaciares, fiordos y montañas nevadas. El Parque Nacional Laguna San Rafael abarca los Campos de Hielo Norte de la Patagonia, que tiene numerosos glaciares en los lagos interiores y ríos. Las cumbres de las montañas incluyen el cerro Castillo, de 2,675 m de altura y terreno serrado, ubicado dentro de una reserva natural del mismo nombre";
           imagen.src = "./img/aysen.jpg";
           break;
-        case 12: titulo.innerText = "Region del Magallanes";
+        case 12: titulo.innerText = "Region de Magallanes";
           descripcion.innerText = "El Parque Nacional Torres del Paine, en la región de la Patagonia de Chile, es conocido por sus altas montañas, los témpanos de azul brillante que se aferran a los glaciares y las pampas doradas (praderas) que albergan fauna poco común, como los guanacos. Algunos de los sitios más icónicos son las 3 torres de granito que le dan nombre al parque y las cimas con forma de cuernos llamadas Cuernos del Paine";
           imagen.src = "./img/magallanes (2).jpg";
           break;
@@ -149,15 +151,17 @@
 
 
     function ocultar() {
-    }
+    } 
 
-  </script>
-</body>
+   </script> 
 
-
-<script>
+ <script>
   $("area").hover(function () {
     $(this).toggleClass('arriba').siblings().toggleClass('abajo')
-  })</script>
+  })
+</script>
+<scrip src="./script.js"></script>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
 
+</body>
 </html>
